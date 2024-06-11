@@ -15,6 +15,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QProgressBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -36,6 +37,10 @@ public:
     QLabel *label_3;
     QLabel *label_4;
     QLabel *ledIndicator;
+    QPushButton *refreshButton;
+    QLabel *statusLabel;
+    QLabel *labelTargetX;
+    QLabel *labelTargetY;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -104,7 +109,24 @@ public:
         label_4->setFont(font1);
         ledIndicator = new QLabel(centralwidget);
         ledIndicator->setObjectName("ledIndicator");
-        ledIndicator->setGeometry(QRect(30, 20, 30, 30));
+        ledIndicator->setGeometry(QRect(60, 20, 30, 30));
+        refreshButton = new QPushButton(centralwidget);
+        refreshButton->setObjectName("refreshButton");
+        refreshButton->setGeometry(QRect(250, 20, 40, 45));
+        statusLabel = new QLabel(centralwidget);
+        statusLabel->setObjectName("statusLabel");
+        statusLabel->setGeometry(QRect(120, 20, 100, 30));
+        labelTargetX = new QLabel(centralwidget);
+        labelTargetX->setObjectName("labelTargetX");
+        labelTargetX->setGeometry(QRect(20, 410, 201, 61));
+        QFont font2;
+        font2.setFamilies({QString::fromUtf8("Arial")});
+        font2.setPointSize(24);
+        labelTargetX->setFont(font2);
+        labelTargetY = new QLabel(centralwidget);
+        labelTargetY->setObjectName("labelTargetY");
+        labelTargetY->setGeometry(QRect(250, 400, 211, 71));
+        labelTargetY->setFont(font2);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -130,6 +152,10 @@ public:
         label_3->setText(QCoreApplication::translate("MainWindow", "Pr\304\231dko\305\233\304\207 lewego silnika ", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "Pr\304\231dko\305\233\304\207 prawego silnika ", nullptr));
         ledIndicator->setText(QString());
+        refreshButton->setText(QString());
+        statusLabel->setText(QString());
+        labelTargetX->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        labelTargetY->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
     } // retranslateUi
 
 };

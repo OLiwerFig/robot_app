@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QSerialPort>
 #include <QTimer>
+#include <QPushButton>
+#include <QLabel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,11 +21,14 @@ public:
 
 private slots:
     void readSerialData();
+    void refreshConnection();
 
 private:
     Ui::MainWindow *ui;
     QSerialPort *serialPort;
-    QTimer *timer;
+    QTimer *connectionTimer;
+    QTimer *readTimer;
+    QTimer *refreshTimer;
 };
 
 #endif // MAINWINDOW_H
