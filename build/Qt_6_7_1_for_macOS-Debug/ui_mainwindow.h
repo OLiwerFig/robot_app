@@ -11,12 +11,17 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QGraphicsView>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -25,22 +30,38 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QLabel *labelPosX;
-    QLabel *labelPosY;
-    QLabel *labelTheta;
-    QProgressBar *speedLProgressBar;
-    QProgressBar *pwmLProgressBar;
-    QProgressBar *speedRProgressBar;
-    QProgressBar *pwmRProgressBar;
-    QLabel *label;
-    QLabel *label_2;
-    QLabel *label_3;
-    QLabel *label_4;
     QLabel *ledIndicator;
     QPushButton *refreshButton;
     QLabel *statusLabel;
+    QComboBox *comboBoxSerialPorts;
+    QPushButton *buttonConnect;
+    QLabel *send_target;
+    QWidget *layoutWidget;
+    QHBoxLayout *horizontalLayout;
     QLabel *labelTargetX;
     QLabel *labelTargetY;
+    QLineEdit *lineEditTargetX;
+    QLineEdit *lineEditTargetY;
+    QPushButton *buttonSendTarget;
+    QLabel *actualTarget;
+    QLabel *actual_position;
+    QGraphicsView *graphicsView;
+    QPushButton *clearButton;
+    QWidget *layoutWidget1;
+    QVBoxLayout *verticalLayout;
+    QLabel *pwn_text_L;
+    QProgressBar *pwmLProgressBar;
+    QLabel *pwn_text_P;
+    QProgressBar *pwmRProgressBar;
+    QLabel *speed_text_L;
+    QProgressBar *speedLProgressBar;
+    QLabel *speed_text_R;
+    QProgressBar *speedRProgressBar;
+    QWidget *layoutWidget2;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *labelPosY;
+    QLabel *labelPosX;
+    QLabel *labelTheta;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -51,82 +72,164 @@ public:
         MainWindow->resize(962, 534);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        labelPosX = new QLabel(centralwidget);
-        labelPosX->setObjectName("labelPosX");
-        labelPosX->setGeometry(QRect(60, 300, 300, 100));
+        ledIndicator = new QLabel(centralwidget);
+        ledIndicator->setObjectName("ledIndicator");
+        ledIndicator->setGeometry(QRect(70, 50, 30, 30));
+        refreshButton = new QPushButton(centralwidget);
+        refreshButton->setObjectName("refreshButton");
+        refreshButton->setGeometry(QRect(350, 50, 32, 32));
+        statusLabel = new QLabel(centralwidget);
+        statusLabel->setObjectName("statusLabel");
+        statusLabel->setGeometry(QRect(110, 50, 230, 30));
+        comboBoxSerialPorts = new QComboBox(centralwidget);
+        comboBoxSerialPorts->setObjectName("comboBoxSerialPorts");
+        comboBoxSerialPorts->setGeometry(QRect(60, 90, 281, 30));
+        buttonConnect = new QPushButton(centralwidget);
+        buttonConnect->setObjectName("buttonConnect");
+        buttonConnect->setGeometry(QRect(350, 90, 30, 30));
+        send_target = new QLabel(centralwidget);
+        send_target->setObjectName("send_target");
+        send_target->setGeometry(QRect(610, 380, 111, 31));
         QFont font;
         font.setFamilies({QString::fromUtf8("Arial")});
-        font.setPointSize(36);
-        labelPosX->setFont(font);
-        labelPosY = new QLabel(centralwidget);
-        labelPosY->setObjectName("labelPosY");
-        labelPosY->setGeometry(QRect(60, 180, 300, 100));
-        labelPosY->setFont(font);
-        labelTheta = new QLabel(centralwidget);
-        labelTheta->setObjectName("labelTheta");
-        labelTheta->setGeometry(QRect(60, 60, 300, 100));
-        labelTheta->setFont(font);
-        labelTheta->setLineWidth(1);
-        speedLProgressBar = new QProgressBar(centralwidget);
+        font.setPointSize(18);
+        send_target->setFont(font);
+        layoutWidget = new QWidget(centralwidget);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(470, 420, 331, 41));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
+        horizontalLayout->setObjectName("horizontalLayout");
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        labelTargetX = new QLabel(layoutWidget);
+        labelTargetX->setObjectName("labelTargetX");
+        labelTargetX->setFont(font);
+
+        horizontalLayout->addWidget(labelTargetX);
+
+        labelTargetY = new QLabel(layoutWidget);
+        labelTargetY->setObjectName("labelTargetY");
+        labelTargetY->setFont(font);
+
+        horizontalLayout->addWidget(labelTargetY);
+
+        lineEditTargetX = new QLineEdit(layoutWidget);
+        lineEditTargetX->setObjectName("lineEditTargetX");
+
+        horizontalLayout->addWidget(lineEditTargetX);
+
+        lineEditTargetY = new QLineEdit(layoutWidget);
+        lineEditTargetY->setObjectName("lineEditTargetY");
+
+        horizontalLayout->addWidget(lineEditTargetY);
+
+        buttonSendTarget = new QPushButton(layoutWidget);
+        buttonSendTarget->setObjectName("buttonSendTarget");
+        buttonSendTarget->setAutoDefault(false);
+
+        horizontalLayout->addWidget(buttonSendTarget);
+
+        horizontalLayout->setStretch(0, 1);
+        horizontalLayout->setStretch(1, 1);
+        horizontalLayout->setStretch(2, 1);
+        horizontalLayout->setStretch(3, 1);
+        actualTarget = new QLabel(centralwidget);
+        actualTarget->setObjectName("actualTarget");
+        actualTarget->setGeometry(QRect(470, 380, 151, 31));
+        actualTarget->setFont(font);
+        actual_position = new QLabel(centralwidget);
+        actual_position->setObjectName("actual_position");
+        actual_position->setGeometry(QRect(470, 280, 241, 31));
+        actual_position->setFont(font);
+        graphicsView = new QGraphicsView(centralwidget);
+        graphicsView->setObjectName("graphicsView");
+        graphicsView->setGeometry(QRect(70, 150, 300, 300));
+        clearButton = new QPushButton(centralwidget);
+        clearButton->setObjectName("clearButton");
+        clearButton->setGeometry(QRect(330, 410, 30, 35));
+        layoutWidget1 = new QWidget(centralwidget);
+        layoutWidget1->setObjectName("layoutWidget1");
+        layoutWidget1->setGeometry(QRect(470, 40, 391, 221));
+        verticalLayout = new QVBoxLayout(layoutWidget1);
+        verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        pwn_text_L = new QLabel(layoutWidget1);
+        pwn_text_L->setObjectName("pwn_text_L");
+        pwn_text_L->setFont(font);
+
+        verticalLayout->addWidget(pwn_text_L);
+
+        pwmLProgressBar = new QProgressBar(layoutWidget1);
+        pwmLProgressBar->setObjectName("pwmLProgressBar");
+        pwmLProgressBar->setMaximum(150);
+        pwmLProgressBar->setValue(0);
+
+        verticalLayout->addWidget(pwmLProgressBar);
+
+        pwn_text_P = new QLabel(layoutWidget1);
+        pwn_text_P->setObjectName("pwn_text_P");
+        pwn_text_P->setFont(font);
+
+        verticalLayout->addWidget(pwn_text_P);
+
+        pwmRProgressBar = new QProgressBar(layoutWidget1);
+        pwmRProgressBar->setObjectName("pwmRProgressBar");
+        pwmRProgressBar->setMaximum(150);
+        pwmRProgressBar->setValue(0);
+
+        verticalLayout->addWidget(pwmRProgressBar);
+
+        speed_text_L = new QLabel(layoutWidget1);
+        speed_text_L->setObjectName("speed_text_L");
+        speed_text_L->setFont(font);
+
+        verticalLayout->addWidget(speed_text_L);
+
+        speedLProgressBar = new QProgressBar(layoutWidget1);
         speedLProgressBar->setObjectName("speedLProgressBar");
-        speedLProgressBar->setGeometry(QRect(450, 270, 400, 60));
         speedLProgressBar->setAutoFillBackground(false);
         speedLProgressBar->setMaximum(100);
         speedLProgressBar->setValue(24);
-        pwmLProgressBar = new QProgressBar(centralwidget);
-        pwmLProgressBar->setObjectName("pwmLProgressBar");
-        pwmLProgressBar->setGeometry(QRect(450, 50, 400, 60));
-        pwmLProgressBar->setMaximum(100);
-        pwmLProgressBar->setValue(0);
-        speedRProgressBar = new QProgressBar(centralwidget);
+
+        verticalLayout->addWidget(speedLProgressBar);
+
+        speed_text_R = new QLabel(layoutWidget1);
+        speed_text_R->setObjectName("speed_text_R");
+        speed_text_R->setFont(font);
+
+        verticalLayout->addWidget(speed_text_R);
+
+        speedRProgressBar = new QProgressBar(layoutWidget1);
         speedRProgressBar->setObjectName("speedRProgressBar");
-        speedRProgressBar->setGeometry(QRect(450, 360, 400, 60));
-        speedRProgressBar->setMaximum(100);
+        speedRProgressBar->setMaximum(150);
         speedRProgressBar->setValue(24);
-        pwmRProgressBar = new QProgressBar(centralwidget);
-        pwmRProgressBar->setObjectName("pwmRProgressBar");
-        pwmRProgressBar->setGeometry(QRect(450, 140, 400, 60));
-        pwmRProgressBar->setMaximum(100);
-        pwmRProgressBar->setValue(0);
-        label = new QLabel(centralwidget);
-        label->setObjectName("label");
-        label->setGeometry(QRect(450, 20, 400, 50));
-        QFont font1;
-        font1.setFamilies({QString::fromUtf8("Arial")});
-        font1.setPointSize(18);
-        label->setFont(font1);
-        label_2 = new QLabel(centralwidget);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(450, 110, 400, 50));
-        label_2->setFont(font1);
-        label_3 = new QLabel(centralwidget);
-        label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(450, 240, 300, 50));
-        label_3->setFont(font1);
-        label_4 = new QLabel(centralwidget);
-        label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(450, 330, 300, 50));
-        label_4->setFont(font1);
-        ledIndicator = new QLabel(centralwidget);
-        ledIndicator->setObjectName("ledIndicator");
-        ledIndicator->setGeometry(QRect(60, 20, 30, 30));
-        refreshButton = new QPushButton(centralwidget);
-        refreshButton->setObjectName("refreshButton");
-        refreshButton->setGeometry(QRect(250, 20, 40, 45));
-        statusLabel = new QLabel(centralwidget);
-        statusLabel->setObjectName("statusLabel");
-        statusLabel->setGeometry(QRect(120, 20, 100, 30));
-        labelTargetX = new QLabel(centralwidget);
-        labelTargetX->setObjectName("labelTargetX");
-        labelTargetX->setGeometry(QRect(20, 410, 201, 61));
-        QFont font2;
-        font2.setFamilies({QString::fromUtf8("Arial")});
-        font2.setPointSize(24);
-        labelTargetX->setFont(font2);
-        labelTargetY = new QLabel(centralwidget);
-        labelTargetY->setObjectName("labelTargetY");
-        labelTargetY->setGeometry(QRect(250, 400, 211, 71));
-        labelTargetY->setFont(font2);
+
+        verticalLayout->addWidget(speedRProgressBar);
+
+        layoutWidget2 = new QWidget(centralwidget);
+        layoutWidget2->setObjectName("layoutWidget2");
+        layoutWidget2->setGeometry(QRect(470, 310, 331, 61));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget2);
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        labelPosY = new QLabel(layoutWidget2);
+        labelPosY->setObjectName("labelPosY");
+        labelPosY->setFont(font);
+
+        horizontalLayout_2->addWidget(labelPosY);
+
+        labelPosX = new QLabel(layoutWidget2);
+        labelPosX->setObjectName("labelPosX");
+        labelPosX->setFont(font);
+
+        horizontalLayout_2->addWidget(labelPosX);
+
+        labelTheta = new QLabel(layoutWidget2);
+        labelTheta->setObjectName("labelTheta");
+        labelTheta->setFont(font);
+        labelTheta->setLineWidth(1);
+
+        horizontalLayout_2->addWidget(labelTheta);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -144,18 +247,24 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        labelPosX->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        labelPosY->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        labelTheta->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Warto\305\233\304\207 wype\305\202nienia PWM lewego silnika ", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "Warto\305\233\304\207 wype\305\202nienia PWM prawego silnika ", nullptr));
-        label_3->setText(QCoreApplication::translate("MainWindow", "Pr\304\231dko\305\233\304\207 lewego silnika ", nullptr));
-        label_4->setText(QCoreApplication::translate("MainWindow", "Pr\304\231dko\305\233\304\207 prawego silnika ", nullptr));
         ledIndicator->setText(QString());
         refreshButton->setText(QString());
         statusLabel->setText(QString());
-        labelTargetX->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        labelTargetY->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        buttonConnect->setText(QString());
+        send_target->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        labelTargetX->setText(QString());
+        labelTargetY->setText(QString());
+        buttonSendTarget->setText(QString());
+        actualTarget->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        actual_position->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        clearButton->setText(QString());
+        pwn_text_L->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        pwn_text_P->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        speed_text_L->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        speed_text_R->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        labelPosY->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        labelPosX->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        labelTheta->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
     } // retranslateUi
 
 };

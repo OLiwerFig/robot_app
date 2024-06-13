@@ -14,10 +14,10 @@ EQ            = =
 
 CC            = /Library/Developer/CommandLineTools/usr/bin/clang
 CXX           = /Library/Developer/CommandLineTools/usr/bin/clang++
-DEFINES       = -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SERIALPORT_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_QML_DEBUG -DQT_CHARTS_LIB -DQT_OPENGLWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_SERIALPORT_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g $(EXPORT_ARCH_ARGS) -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mmacosx-version-min=11.0 -Wall -Wextra $(DEFINES)
 CXXFLAGS      = -pipe -stdlib=libc++ -g -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mmacosx-version-min=11.0 -Wall -Wextra $(DEFINES)
-INCPATH       = -I../../../Kamerka -I. -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/AGL.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/mkspecs/macx-clang -F/Users/oliwerfigura/Qt/6.7.1/macos/lib
+INCPATH       = -I../../../Kamerka -I. -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCharts.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtOpenGLWidgets.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtOpenGL.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/AGL.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/mkspecs/macx-clang -F/Users/oliwerfigura/Qt/6.7.1/macos/lib
 QMAKE         = /Users/oliwerfigura/Qt/6.7.1/macos/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = Kamerka1.0.0
 DISTDIR = /Users/oliwerfigura/Desktop/6\ semestr/Wizaualizacja\ danych\ sensorycznych/PROJEKT/faza\ 2/Kamerka/build/Qt_6_7_1_for_macOS-Debug/.tmp/Kamerka1.0.0
 LINK          = /Library/Developer/CommandLineTools/usr/bin/clang++
 LFLAGS        = -stdlib=libc++ -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mmacosx-version-min=11.0 -Wl,-rpath,@executable_path/../Frameworks -Wl,-rpath,/Users/oliwerfigura/Qt/6.7.1/macos/lib
-LIBS          = $(SUBLIBS) -F/Users/oliwerfigura/Qt/6.7.1/macos/lib -framework QtWidgets -framework QtGui -framework AppKit -framework ImageIO -framework Metal -framework QtSerialPort -framework QtCore -framework IOKit -framework DiskArbitration -framework AGL -framework OpenGL   
+LIBS          = $(SUBLIBS) -F/Users/oliwerfigura/Qt/6.7.1/macos/lib -framework QtCharts -framework QtOpenGLWidgets -framework QtWidgets -framework QtOpenGL -framework QtGui -framework AppKit -framework ImageIO -framework Metal -framework QtSerialPort -framework QtCore -framework IOKit -framework DiskArbitration -framework AGL -framework OpenGL   
 AR            = /Library/Developer/CommandLineTools/usr/bin/ar cq
 RANLIB        = /Library/Developer/CommandLineTools/usr/bin/ranlib -s
 SED           = sed
@@ -818,7 +818,10 @@ Makefile: ../../Kamerka.pro /Users/oliwerfigura/Qt/6.7.1/macos/mkspecs/macx-clan
 		../../Kamerka.pro \
 		../../resources.qrc \
 		qmake_qmake_qm_files.qrc \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCharts.framework/Resources/QtCharts.prl \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtOpenGLWidgets.framework/Resources/QtOpenGLWidgets.prl \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Resources/QtWidgets.prl \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtOpenGL.framework/Resources/QtOpenGL.prl \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Resources/QtGui.prl \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Resources/QtSerialPort.prl \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Resources/QtCore.prl
@@ -1190,7 +1193,10 @@ Makefile: ../../Kamerka.pro /Users/oliwerfigura/Qt/6.7.1/macos/mkspecs/macx-clan
 ../../Kamerka.pro:
 ../../resources.qrc:
 qmake_qmake_qm_files.qrc:
+/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCharts.framework/Resources/QtCharts.prl:
+/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtOpenGLWidgets.framework/Resources/QtOpenGLWidgets.prl:
 /Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Resources/QtWidgets.prl:
+/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtOpenGL.framework/Resources/QtOpenGL.prl:
 /Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Resources/QtGui.prl:
 /Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Resources/QtSerialPort.prl:
 /Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Resources/QtCore.prl:
@@ -1261,7 +1267,9 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_resources.cpp qrc_qmake_qmake_qm_files.cpp
 qrc_resources.cpp: ../../resources.qrc \
 		/Users/oliwerfigura/Qt/6.7.1/macos/libexec/rcc \
-		../../retry.png
+		../../con.jpg \
+		../../retry.png \
+		../../grid.png
 	/Users/oliwerfigura/Qt/6.7.1/macos/libexec/rcc -name resources --no-zstd ../../resources.qrc -o qrc_resources.cpp
 
 qrc_qmake_qmake_qm_files.cpp: qmake_qmake_qm_files.qrc \
@@ -1279,12 +1287,14 @@ moc_mainwindow.cpp: ../../mainwindow.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/qserialport.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QTimer \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtimer.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QPushButton \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QLabel \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qlabel.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsTextItem \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsLineItem \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
 		/Users/oliwerfigura/Qt/6.7.1/macos/libexec/moc
-	/Users/oliwerfigura/Qt/6.7.1/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/oliwerfigura/Qt/6.7.1/macos/mkspecs/macx-clang -I'/Users/oliwerfigura/Desktop/6 semestr/Wizaualizacja danych sensorycznych/PROJEKT/faza 2/Kamerka' -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/oliwerfigura/Qt/6.7.1/macos/lib ../../mainwindow.h -o moc_mainwindow.cpp
+	/Users/oliwerfigura/Qt/6.7.1/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/oliwerfigura/Qt/6.7.1/macos/mkspecs/macx-clang -I'/Users/oliwerfigura/Desktop/6 semestr/Wizaualizacja danych sensorycznych/PROJEKT/faza 2/Kamerka' -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCharts.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtOpenGLWidgets.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtOpenGL.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/oliwerfigura/Qt/6.7.1/macos/lib ../../mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1316,10 +1326,12 @@ main.o: ../../main.cpp ../../mainwindow.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/qserialport.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QTimer \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtimer.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QPushButton \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QLabel \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qlabel.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsTextItem \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsLineItem \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QApplication \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../../main.cpp
@@ -1331,10 +1343,12 @@ mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/qserialport.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QTimer \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtimer.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QPushButton \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QLabel \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qlabel.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsTextItem \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsLineItem \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
 		ui_mainwindow.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/QSerialPortInfo \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/qserialportinfo.h \

@@ -4,8 +4,8 @@
 #include <QMainWindow>
 #include <QSerialPort>
 #include <QTimer>
-#include <QPushButton>
-#include <QLabel>
+#include <QGraphicsScene>
+#include <QGraphicsPixmapItem>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,19 +16,25 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
     void readSerialData();
     void refreshConnection();
+    void sendTargetCoordinates();
+    void connectSerialPort();
+    void clearPathHistory();
 
 private:
     Ui::MainWindow *ui;
     QSerialPort *serialPort;
-    QTimer *connectionTimer;
     QTimer *readTimer;
     QTimer *refreshTimer;
+    QGraphicsScene *scene;
+    QGraphicsPixmapItem *gridPixmapItem;
+    QList<QGraphicsItem*> pathItems;
+    QList<QPointF> pathPoints;
 };
 
 #endif // MAINWINDOW_H
