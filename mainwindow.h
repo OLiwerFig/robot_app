@@ -2,11 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QSerialPort>
-#include <QTimer>
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
 #include <QTranslator>
+#include "serialport.h"
+#include "setview.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,20 +20,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private slots:
-    void readSerialData();
-    void refreshConnection();
-    void sendTargetCoordinates();
-    void connectSerialPort();
-    void clearPathHistory();
-    void toggleLanguage();
-    void updateTexts();
+    void updatePortStatus(bool connected);
 
 private:
     Ui::MainWindow *ui;
-    QSerialPort *serialPort;
-    QTimer *readTimer;
-    QTimer *refreshTimer;
+    serialport *serialPortHandler;
+    SetView *setViewHandler;
     QGraphicsScene *scene;
     QGraphicsPixmapItem *gridPixmapItem;
     QList<QPointF> pathPoints;
