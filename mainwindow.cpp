@@ -1,13 +1,18 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+
 #include <QSerialPortInfo>
 #include <QGraphicsTextItem>
 #include <QGraphicsPixmapItem>
 #include <QDebug>
+#include <QResizeEvent>
+#include <QTranslator>
+#include <QLibraryInfo>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    , translator(new QTranslator(this))
 {
     ui->setupUi(this);
 
@@ -21,22 +26,11 @@ MainWindow::MainWindow(QWidget *parent)
     ui->clearButton->setIcon(refreshIcon);
     ui->clearButton->setIconSize(QSize(26, 26));
 
-
-    QIcon conIcon(":/images/con.jpg");
+    QIcon conIcon(":/images/con.png");
     ui->buttonConnect->setIcon(conIcon);
     ui->buttonConnect->setIconSize(QSize(32, 32));
 
-    ui->speed_text_L->setText("Prędkość lewego silnika ");
-    ui->speed_text_R->setText("Prędkość prawego silnika ");
-
-    ui->pwn_text_L->setText("Wartość wypełnienia PWM prawego silnika ");
-    ui->pwn_text_L->setText("Wartość wypełnienia PWM lewego silnika ");
-
-    ui->actualTarget->setText("Aktualny Target ");
-    ui->actual_position->setText("Aktualna Pozycja ");
-    ui->send_target->setText("Wpisz target ");
-
-    ui->buttonSendTarget->setText("Send");
+    updateTexts();
 
     const auto serialPortInfos = QSerialPortInfo::availablePorts();
     for (const QSerialPortInfo &serialPortInfo : serialPortInfos) {
@@ -51,7 +45,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Initialize LED indicator
     ui->ledIndicator->setStyleSheet("background-color: red; border-radius: 10px;");
-    ui->statusLabel->setText("Disconnected");
+    ui->statusLabel->setText(tr("Disconnected"));
 
     // Timer to read data from the serial port
     readTimer = new QTimer(this);
@@ -65,7 +59,7 @@ MainWindow::MainWindow(QWidget *parent)
     // Initialize the graphics scene for the map
     scene = new QGraphicsScene(this);
     ui->graphicsView->setScene(scene);
-    scene->setSceneRect(-10, -10, 20, 20);
+    scene->setSceneRect(-150, -150, 300, 300);
 
     ui->graphicsView->setRenderHint(QPainter::Antialiasing);
 
@@ -81,13 +75,18 @@ MainWindow::MainWindow(QWidget *parent)
     // Connect the clear button
     connect(ui->clearButton, &QPushButton::clicked, this, &MainWindow::clearPathHistory);
 
+    // Initialize language button
+    ui->languageButton->setIcon(QIcon(":/images/pol.png"));
+    ui->languageButton->setIconSize(QSize(32, 32));
+    connect(ui->languageButton, &QPushButton::clicked, this, &MainWindow::toggleLanguage);
+
     // Attempt to open serial port on start
     if (serialPort->open(QIODevice::ReadWrite)) { // Change to ReadWrite mode
         ui->ledIndicator->setStyleSheet("background-color: green; border-radius: 10px;");
-        ui->statusLabel->setText("Connected");
+        ui->statusLabel->setText(tr("Connected"));
         qDebug() << "Serial port opened successfully";
     } else {
-        ui->statusLabel->setText("Disconnected");
+        ui->statusLabel->setText(tr("Disconnected"));
         qDebug() << "Error opening serial port";
     }
 }
@@ -97,8 +96,6 @@ MainWindow::~MainWindow()
     serialPort->close();
     delete ui;
 }
-
-
 
 void MainWindow::readSerialData()
 {
@@ -116,8 +113,8 @@ void MainWindow::readSerialData()
             ui->labelPosX->setText(" X: " + QString::number(posX));
             ui->labelPosY->setText(" Y: " + QString::number(posY));
             ui->labelTheta->setText("Theta: " + QString(values[6]));
-            ui->labelTargetX->setText(QString(values[7]));
-            ui->labelTargetY->setText(QString(values[8]));
+            ui->labelTargetX->setText(" X: " + QString(values[7]));
+            ui->labelTargetY->setText(" Y: " + QString(values[8]));
 
             // Add the new position to the path
             QPointF newPoint(posX, posY);
@@ -138,7 +135,7 @@ void MainWindow::readSerialData()
             }
 
             // Optionally adjust the view to always fit the scene
-            //ui->graphicsView->fitInView(scene->sceneRect(), Qt::KeepAspectRatio);
+            ui->graphicsView->fitInView(scene->sceneRect(), Qt::KeepAspectRatio);
         } else if (values.size() == 2) {
             // Echoed target coordinates
             float targetX = QString(values[0]).toFloat();
@@ -147,7 +144,6 @@ void MainWindow::readSerialData()
         }
     }
 }
-
 
 void MainWindow::refreshConnection()
 {
@@ -160,11 +156,11 @@ void MainWindow::refreshConnection()
 
     if (serialPort->open(QIODevice::ReadWrite)) {
         ui->ledIndicator->setStyleSheet("background-color: green; border-radius: 10px;");
-        ui->statusLabel->setText("Connected to " + selectedPort);
+        ui->statusLabel->setText(tr("Connected to ") + selectedPort);
         qDebug() << "Reopened serial port";
     } else {
         ui->ledIndicator->setStyleSheet("background-color: red; border-radius: 10px;");
-        ui->statusLabel->setText("Disconnected");
+        ui->statusLabel->setText(tr("Disconnected"));
         qDebug() << "Error reopening serial port";
     }
 }
@@ -202,11 +198,11 @@ void MainWindow::connectSerialPort()
 
     if (serialPort->open(QIODevice::ReadWrite)) {
         ui->ledIndicator->setStyleSheet("background-color: green; border-radius: 10px;");
-        ui->statusLabel->setText("Connected to " + selectedPort);
+        ui->statusLabel->setText(tr("Connected to ") + selectedPort);
         qDebug() << "Connected to" << selectedPort;
     } else {
         ui->ledIndicator->setStyleSheet("background-color: red; border-radius: 10px;");
-        ui->statusLabel->setText("Disconnected");
+        ui->statusLabel->setText(tr("Disconnected"));
         qDebug() << "Error opening serial port" << selectedPort;
     }
 }
@@ -234,4 +230,42 @@ void MainWindow::clearPathHistory()
     scene->addLine(0, -10, 0, 10, QPen(Qt::black)); // Y-axis
 }
 
+void MainWindow::toggleLanguage()
+{
+    static bool isEnglish = false;
+    isEnglish = !isEnglish;
 
+    bool loaded = false;
+
+    if (isEnglish) {
+        loaded = translator->load(":/translations/app_en.qm");
+        ui->languageButton->setIcon(QIcon(":/images/ang.png"));
+    } else {
+        loaded = translator->load(":/translations/app_pl.qm");
+        ui->languageButton->setIcon(QIcon(":/images/pol.png"));
+    }
+
+    if (!loaded) {
+        qDebug() << "Failed to load translation file.";
+    } else {
+        qApp->installTranslator(translator);
+        ui->retranslateUi(this);
+        updateTexts();
+    }
+}
+
+void MainWindow::updateTexts()
+{
+    ui->speed_text_L->setText(tr("Prędkość lewego silnika"));
+    ui->speed_text_R->setText(tr("Prędkość prawego silnika"));
+    ui->pwn_text_R->setText(tr("Wartość wypełnienia PWM prawego silnika"));
+    ui->pwn_text_L->setText(tr("Wartość wypełnienia PWM lewego silnika"));
+    ui->actualTarget->setText(tr("Aktualny Target"));
+    ui->actual_position->setText(tr("Aktualna Pozycja"));
+    ui->send_target->setText(tr("Wpisz target"));
+    ui->buttonSendTarget->setText(tr("Send"));
+    ui->statusLabel->setText(tr("Disconnected"));
+    ui->buttonConnect->setText(tr("Connect"));
+    ui->refreshButton->setText(tr("Refresh"));
+    ui->clearButton->setText(tr("Clear"));
+}

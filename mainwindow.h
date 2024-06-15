@@ -6,6 +6,7 @@
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
+#include <QTranslator>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,7 +17,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
@@ -25,6 +26,8 @@ private slots:
     void sendTargetCoordinates();
     void connectSerialPort();
     void clearPathHistory();
+    void toggleLanguage();
+    void updateTexts();
 
 private:
     Ui::MainWindow *ui;
@@ -33,8 +36,9 @@ private:
     QTimer *refreshTimer;
     QGraphicsScene *scene;
     QGraphicsPixmapItem *gridPixmapItem;
-    QList<QGraphicsItem*> pathItems;
     QList<QPointF> pathPoints;
+    QList<QGraphicsEllipseItem *> pathItems;
+    QTranslator *translator;
 };
 
 #endif // MAINWINDOW_H

@@ -21,8 +21,9 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
-TRANSLATIONS += \
-    Kamerka_pl_PL.ts
+TRANSLATIONS += app_pl.ts \
+                app_en.ts
+
 CONFIG += lrelease
 CONFIG += embed_translations
 

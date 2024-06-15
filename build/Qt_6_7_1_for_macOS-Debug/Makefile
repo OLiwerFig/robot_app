@@ -1224,12 +1224,12 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../../Kamerka_pl_PL.ts $(DISTDIR)/
+	$(COPY_FILE) --parents ../../app_pl.ts ../../app_en.ts $(DISTDIR)/
 	$(COPY_FILE) --parents ../../resources.qrc qmake_qmake_qm_files.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents ../../mainwindow.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../../main.cpp ../../mainwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../../mainwindow.ui $(DISTDIR)/
-	$(COPY_FILE) --parents ../../Kamerka_pl_PL.ts $(DISTDIR)/
+	$(COPY_FILE) --parents ../../app_pl.ts ../../app_en.ts $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -1256,25 +1256,33 @@ check: first
 
 benchmark: first
 
-compiler_lrelease_make_all: .qm/Kamerka_pl_PL.qm
+compiler_lrelease_make_all: .qm/app_pl.qm .qm/app_en.qm
 compiler_lrelease_clean:
-	-$(DEL_FILE) .qm/Kamerka_pl_PL.qm
-.qm/Kamerka_pl_PL.qm: ../../Kamerka_pl_PL.ts
-	/Users/oliwerfigura/Qt/6.7.1/macos/bin/lrelease ../../Kamerka_pl_PL.ts -qm .qm/Kamerka_pl_PL.qm
+	-$(DEL_FILE) .qm/app_pl.qm .qm/app_en.qm
+.qm/app_pl.qm: ../../app_pl.ts
+	/Users/oliwerfigura/Qt/6.7.1/macos/bin/lrelease ../../app_pl.ts -qm .qm/app_pl.qm
+
+.qm/app_en.qm: ../../app_en.ts
+	/Users/oliwerfigura/Qt/6.7.1/macos/bin/lrelease ../../app_en.ts -qm .qm/app_en.qm
 
 compiler_rcc_make_all: qrc_resources.cpp qrc_qmake_qmake_qm_files.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_resources.cpp qrc_qmake_qmake_qm_files.cpp
 qrc_resources.cpp: ../../resources.qrc \
 		/Users/oliwerfigura/Qt/6.7.1/macos/libexec/rcc \
-		../../con.jpg \
+		../../ang.png \
 		../../retry.png \
-		../../grid.png
+		../../con.png \
+		../../pol.png \
+		../../grid.png \
+		../../app_pl.qm \
+		../../app_en.qm
 	/Users/oliwerfigura/Qt/6.7.1/macos/libexec/rcc -name resources --no-zstd ../../resources.qrc -o qrc_resources.cpp
 
 qrc_qmake_qmake_qm_files.cpp: qmake_qmake_qm_files.qrc \
 		/Users/oliwerfigura/Qt/6.7.1/macos/libexec/rcc \
-		.qm/Kamerka_pl_PL.qm
+		.qm/app_pl.qm \
+		.qm/app_en.qm
 	/Users/oliwerfigura/Qt/6.7.1/macos/libexec/rcc -name qmake_qmake_qm_files --no-zstd qmake_qmake_qm_files.qrc -o qrc_qmake_qmake_qm_files.cpp
 
 compiler_moc_header_make_all: moc_mainwindow.cpp
@@ -1289,10 +1297,10 @@ moc_mainwindow.cpp: ../../mainwindow.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtimer.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsTextItem \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsLineItem \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QTranslator \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtranslator.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/libexec/moc
 	/Users/oliwerfigura/Qt/6.7.1/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/oliwerfigura/Qt/6.7.1/macos/mkspecs/macx-clang -I'/Users/oliwerfigura/Desktop/6 semestr/Wizaualizacja danych sensorycznych/PROJEKT/faza 2/Kamerka' -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCharts.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtOpenGLWidgets.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtOpenGL.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/oliwerfigura/Qt/6.7.1/macos/lib ../../mainwindow.h -o moc_mainwindow.cpp
 
@@ -1328,10 +1336,10 @@ main.o: ../../main.cpp ../../mainwindow.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtimer.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsTextItem \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsLineItem \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QTranslator \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtranslator.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QApplication \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../../main.cpp
@@ -1345,15 +1353,20 @@ mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtimer.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsTextItem \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsLineItem \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QTranslator \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtranslator.h \
 		ui_mainwindow.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/QSerialPortInfo \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/qserialportinfo.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsTextItem \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QDebug \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qdebug.h
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/QResizeEvent \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/qevent.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QLibraryInfo \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qlibraryinfo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../../mainwindow.cpp
 
 qrc_resources.o: qrc_resources.cpp 
