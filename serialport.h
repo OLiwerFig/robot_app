@@ -3,7 +3,11 @@
 
 #include <QObject>
 #include <QSerialPort>
+#include <QGraphicsScene>
 #include "ui_mainwindow.h"
+
+// Forward declare MainWindow
+class MainWindow;
 
 class serialport : public QObject
 {
@@ -14,9 +18,9 @@ public:
     void connectSerialPort(const QString &portName);
     void refreshConnection(Ui::MainWindow *ui);
     void sendTargetCoordinates(Ui::MainWindow *ui);
+    void handleSerialData(MainWindow *mainWindow, Ui::MainWindow *ui, QGraphicsScene *scene, QList<QPointF> &pathPoints, QList<QGraphicsEllipseItem *> &pathItems, const QList<QByteArray> &values);
     void handlePortStatusChanged(Ui::MainWindow *ui, bool connected, const QString &portName);
     void populateAvailablePorts(Ui::MainWindow *ui);
-    void handleSerialData(Ui::MainWindow *ui, QGraphicsScene *scene, QList<QPointF> &pathPoints, QList<QGraphicsEllipseItem *> &pathItems, const QList<QByteArray> &values);
 
 signals:
     void serialDataReceived(const QList<QByteArray> &data);

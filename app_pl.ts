@@ -15,9 +15,6 @@
         <location filename="mainwindow.ui" line="199"/>
         <location filename="mainwindow.ui" line="225"/>
         <location filename="mainwindow.ui" line="252"/>
-        <location filename="mainwindow.ui" line="267"/>
-        <location filename="mainwindow.ui" line="280"/>
-        <location filename="mainwindow.ui" line="296"/>
         <location filename="mainwindow.ui" line="317"/>
         <location filename="mainwindow.ui" line="330"/>
         <location filename="build/Qt_6_7_1_for_macOS-Debug/ui_mainwindow.h" line="367"/>
@@ -25,114 +22,96 @@
         <location filename="build/Qt_6_7_1_for_macOS-Debug/ui_mainwindow.h" line="369"/>
         <location filename="build/Qt_6_7_1_for_macOS-Debug/ui_mainwindow.h" line="370"/>
         <location filename="build/Qt_6_7_1_for_macOS-Debug/ui_mainwindow.h" line="371"/>
-        <location filename="build/Qt_6_7_1_for_macOS-Debug/ui_mainwindow.h" line="372"/>
-        <location filename="build/Qt_6_7_1_for_macOS-Debug/ui_mainwindow.h" line="373"/>
-        <location filename="build/Qt_6_7_1_for_macOS-Debug/ui_mainwindow.h" line="374"/>
         <location filename="build/Qt_6_7_1_for_macOS-Debug/ui_mainwindow.h" line="375"/>
         <location filename="build/Qt_6_7_1_for_macOS-Debug/ui_mainwindow.h" line="376"/>
         <source>TextLabel</source>
         <translation></translation>
     </message>
     <message>
-        <source>Prędkość lewego silnika </source>
-        <translation type="vanished">Left engine speed </translation>
+        <location filename="mainwindow.ui" line="267"/>
+        <location filename="build/Qt_6_7_1_for_macOS-Debug/ui_mainwindow.h" line="372"/>
+        <source>X</source>
+        <translation></translation>
     </message>
     <message>
-        <source>Prędkość prawego silnika </source>
-        <translation type="vanished">Right engine speed </translation>
+        <location filename="mainwindow.ui" line="280"/>
+        <location filename="build/Qt_6_7_1_for_macOS-Debug/ui_mainwindow.h" line="373"/>
+        <source>Y</source>
+        <translation></translation>
     </message>
     <message>
-        <source>Wartość wypełnienia PWM prawego silnika </source>
-        <translation type="vanished">PWM fill value of the right motor </translation>
+        <location filename="mainwindow.ui" line="296"/>
+        <location filename="build/Qt_6_7_1_for_macOS-Debug/ui_mainwindow.h" line="374"/>
+        <source>Theta</source>
+        <translation></translation>
     </message>
+</context>
+<context>
+    <name>QObject</name>
     <message>
-        <source>Wartość wypełnienia PWM lewego silnika </source>
-        <translation type="vanished">PWM fill value of the left motor </translation>
-    </message>
-    <message>
-        <source>Aktualny Target </source>
-        <translation type="vanished">Actual traget </translation>
-    </message>
-    <message>
-        <source>Aktualna Pozycja </source>
-        <translation type="vanished">Actual position </translation>
-    </message>
-    <message>
-        <source>Wpisz target </source>
-        <translation type="vanished">Enter target </translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="266"/>
-        <source>Send</source>
-        <translation>Wyslij</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="48"/>
-        <location filename="mainwindow.cpp" line="89"/>
-        <location filename="mainwindow.cpp" line="163"/>
-        <location filename="mainwindow.cpp" line="205"/>
-        <location filename="mainwindow.cpp" line="267"/>
-        <source>Disconnected</source>
-        <translation>Rozłaczony</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="86"/>
-        <source>Connected</source>
-        <translation>Połączony</translation>
-    </message>
-    <message>
-        <location filename="mainwindow.cpp" line="159"/>
-        <location filename="mainwindow.cpp" line="201"/>
+        <location filename="serialport.cpp" line="75"/>
         <source>Connected to </source>
         <translation>Połaczony z </translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="259"/>
+        <location filename="serialport.cpp" line="78"/>
+        <location filename="setview.cpp" line="53"/>
+        <location filename="setview.cpp" line="66"/>
+        <source>Disconnected</source>
+        <translation>Rozłaczony</translation>
+    </message>
+    <message>
+        <location filename="setview.cpp" line="58"/>
         <source>Prędkość lewego silnika</source>
         <translation>Prędkość lewego silnika</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="260"/>
+        <location filename="setview.cpp" line="59"/>
         <source>Prędkość prawego silnika</source>
         <translation>Prędkość prawego silnika</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="261"/>
+        <location filename="setview.cpp" line="60"/>
         <source>Wartość wypełnienia PWM prawego silnika</source>
         <translation>Wartość wypełnienia PWM prawego silnika</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="262"/>
+        <location filename="setview.cpp" line="61"/>
         <source>Wartość wypełnienia PWM lewego silnika</source>
         <translation>Wartość wypełnienia PWM lewego silnika</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="263"/>
+        <location filename="setview.cpp" line="62"/>
         <source>Aktualny Target</source>
         <translation>Aktualny Target</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="264"/>
+        <location filename="setview.cpp" line="63"/>
         <source>Aktualna Pozycja</source>
         <translation>Aktualna Pozycja</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="265"/>
+        <location filename="setview.cpp" line="64"/>
         <source>Wpisz target</source>
-        <translation type="unfinished">Wpisz target</translation>
+        <translation>Wpisz target</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="268"/>
+        <location filename="setview.cpp" line="65"/>
+        <source>Send</source>
+        <translation>Wyślij</translation>
+    </message>
+    <message>
+        <location filename="setview.cpp" line="67"/>
         <source>Connect</source>
         <translation>Połącz</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="269"/>
+        <location filename="setview.cpp" line="68"/>
         <source>Refresh</source>
-        <translation>Odsiwież</translation>
+        <translation>Odświerz</translation>
     </message>
     <message>
-        <location filename="mainwindow.cpp" line="270"/>
+        <location filename="setview.cpp" line="69"/>
         <source>Clear</source>
         <translation>Wyczyść</translation>
     </message>

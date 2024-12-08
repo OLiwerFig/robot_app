@@ -27,8 +27,10 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
-TRANSLATIONS += app_pl.ts \
-                app_en.ts
+TRANSLATIONS += \
+        app_pl.ts \
+        app_en.ts
+
 
 CONFIG += lrelease
 CONFIG += embed_translations

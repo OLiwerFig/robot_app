@@ -1314,12 +1314,11 @@ moc_mainwindow.cpp: ../../mainwindow.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QTranslator \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtranslator.h \
 		../../serialport.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/QSerialPort \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/qserialport.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QObject \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qobject.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QTimer \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtimer.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/QSerialPort \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/qserialport.h \
+		ui_mainwindow.h \
 		../../setview.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QWidget \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qwidget.h \
@@ -1331,17 +1330,17 @@ moc_mainwindow.cpp: ../../mainwindow.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qcombobox.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/QIcon \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/qicon.h \
-		ui_mainwindow.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/libexec/moc
 	/Users/oliwerfigura/Qt/6.7.1/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/oliwerfigura/Qt/6.7.1/macos/mkspecs/macx-clang -I'/Users/oliwerfigura/Desktop/6 semestr/Wizaualizacja danych sensorycznych/PROJEKT/faza 2/Kamerka' -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCharts.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtOpenGLWidgets.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtOpenGL.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/oliwerfigura/Qt/6.7.1/macos/lib ../../mainwindow.h -o moc_mainwindow.cpp
 
 moc_serialport.cpp: ../../serialport.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/QSerialPort \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/qserialport.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QObject \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qobject.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QTimer \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtimer.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/QSerialPort \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/qserialport.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		ui_mainwindow.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/libexec/moc
 	/Users/oliwerfigura/Qt/6.7.1/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/oliwerfigura/Qt/6.7.1/macos/mkspecs/macx-clang -I'/Users/oliwerfigura/Desktop/6 semestr/Wizaualizacja danych sensorycznych/PROJEKT/faza 2/Kamerka' -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCharts.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtOpenGLWidgets.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtOpenGL.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers -I/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers -I. -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -I/Library/Developer/CommandLineTools/usr/include -F/Users/oliwerfigura/Qt/6.7.1/macos/lib ../../serialport.h -o moc_serialport.cpp
 
@@ -1385,7 +1384,24 @@ compiler_clean: compiler_lrelease_clean compiler_rcc_clean compiler_moc_header_c
 
 ####### Compile
 
-draw.o: ../../draw.cpp ../../mainwindow.h \
+draw.o: ../../draw.cpp ../../draw.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/QPen \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/qpen.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/QBrush \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/qbrush.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QList \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qlist.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QPointF \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qpoint.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsEllipseItem \
+		ui_mainwindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o draw.o ../../draw.cpp
+
+main.o: ../../main.cpp ../../mainwindow.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
@@ -1395,12 +1411,11 @@ draw.o: ../../draw.cpp ../../mainwindow.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QTranslator \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtranslator.h \
 		../../serialport.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/QSerialPort \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/qserialport.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QObject \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qobject.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QTimer \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtimer.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/QSerialPort \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/qserialport.h \
+		ui_mainwindow.h \
 		../../setview.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QWidget \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qwidget.h \
@@ -1412,7 +1427,36 @@ draw.o: ../../draw.cpp ../../mainwindow.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qcombobox.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/QIcon \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/qicon.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QApplication \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qapplication.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../../main.cpp
+
+mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QTranslator \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtranslator.h \
+		../../serialport.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QObject \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qobject.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/QSerialPort \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/qserialport.h \
 		ui_mainwindow.h \
+		../../setview.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QLabel \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qlabel.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QComboBox \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qcombobox.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/QIcon \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/qicon.h \
 		../../draw.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/QPen \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/qpen.h \
@@ -1432,88 +1476,48 @@ draw.o: ../../draw.cpp ../../mainwindow.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/qevent.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QLibraryInfo \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qlibraryinfo.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o draw.o ../../draw.cpp
-
-main.o: ../../main.cpp ../../mainwindow.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QMainWindow \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QTranslator \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtranslator.h \
-		../../serialport.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/QSerialPort \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/qserialport.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QObject \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qobject.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QTimer \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtimer.h \
-		../../setview.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QWidget \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qwidget.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QPushButton \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QLabel \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qlabel.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QComboBox \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qcombobox.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/QIcon \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/qicon.h \
-		ui_mainwindow.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QApplication \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qapplication.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../../main.cpp
-
-mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QMainWindow \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QTranslator \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtranslator.h \
-		../../serialport.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/QSerialPort \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/qserialport.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QObject \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qobject.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QTimer \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtimer.h \
-		../../setview.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QWidget \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qwidget.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QPushButton \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QLabel \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qlabel.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QComboBox \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qcombobox.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/QIcon \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/qicon.h \
-		ui_mainwindow.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/QSerialPortInfo \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/qserialportinfo.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsTextItem \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QDebug \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qdebug.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/QResizeEvent \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/qevent.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QLibraryInfo \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qlibraryinfo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../../mainwindow.cpp
 
 serialport.o: ../../serialport.cpp ../../serialport.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/QSerialPort \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/qserialport.h \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QObject \
 		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qobject.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QTimer \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtimer.h \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QDebug \
-		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qdebug.h
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/QSerialPort \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/qserialport.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsScene \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsscene.h \
+		ui_mainwindow.h \
+		../../mainwindow.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsPixmapItem \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qgraphicsitem.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QTranslator \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qtranslator.h \
+		../../setview.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QLabel \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qlabel.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QComboBox \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/qcombobox.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/QIcon \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/qicon.h \
+		../../draw.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/QPen \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/qpen.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/QBrush \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtGui.framework/Headers/qbrush.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QList \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qlist.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QPointF \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qpoint.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtWidgets.framework/Headers/QGraphicsEllipseItem \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/QMetaObject \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtCore.framework/Headers/qobjectdefs.h \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/QSerialPortInfo \
+		/Users/oliwerfigura/Qt/6.7.1/macos/lib/QtSerialPort.framework/Headers/qserialportinfo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o serialport.o ../../serialport.cpp
 
 setview.o: ../../setview.cpp ../../setview.h \

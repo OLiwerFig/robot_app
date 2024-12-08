@@ -1,7 +1,19 @@
+/**
+ * \file draw.cpp
+ * \brief Implementacja funkcji rysujących.
+ */
+
 #include "draw.h"
 #include <QPen>
 #include <QBrush>
 
+/**
+ * \brief Inicjalizuje scenę graficzną.
+ *
+ * \param ui Wskaźnik do interfejsu głównego okna.
+ * \param scene Wskaźnik do wskaźnika sceny graficznej, który zostanie zainicjowany nową sceną.
+ * \param gridPixmapItem Wskaźnik do wskaźnika elementu pixmapy siatki, który zostanie zainicjowany elementem pixmapy.
+ */
 void Draw::initializeGraphicsScene(Ui::MainWindow *ui, QGraphicsScene *&scene, QGraphicsPixmapItem *&gridPixmapItem)
 {
     scene = new QGraphicsScene(ui->graphicsView);
@@ -18,6 +30,14 @@ void Draw::initializeGraphicsScene(Ui::MainWindow *ui, QGraphicsScene *&scene, Q
     scene->addLine(0, -10, 0, 10, QPen(Qt::black));
 }
 
+/**
+ * \brief Czyści historię ścieżki i przywraca siatkę.
+ *
+ * \param scene Wskaźnik do sceny graficznej.
+ * \param pathPoints Lista punktów ścieżki, będzie opróżniona po wykonaniu funkcji.
+ * \param pathItems Lista elementów graficznych reprezentujących punkty ścieżki, będzie opróżniona po wykonaniu funkcji.
+ * \param gridPixmapItem Wskaźnik do elementu pixmapy siatki, który jest ponownie dodawany do sceny, jeśli nie jest obecny.
+ */
 void Draw::clearPathHistory(QGraphicsScene *scene, QList<QPointF> &pathPoints, QList<QGraphicsEllipseItem *> &pathItems, QGraphicsPixmapItem *gridPixmapItem)
 {
     pathPoints.clear();
@@ -36,6 +56,17 @@ void Draw::clearPathHistory(QGraphicsScene *scene, QList<QPointF> &pathPoints, Q
     scene->addLine(0, -10, 0, 10, QPen(Qt::black));
 }
 
+
+/**
+ * \brief Aktualizuje ścieżkę, dodając nowy punkt.
+ *
+ * \param ui Wskaźnik do interfejsu głównego okna.
+ * \param scene Wskaźnik do sceny graficznej.
+ * \param pathPoints Lista punktów ścieżki, do której zostanie dodany nowy punkt.
+ * \param pathItems Lista elementów graficznych reprezentujących punkty ścieżki, zostanie zaktualizowana o nowy element.
+ * \param posX Pozycja X nowego punktu.
+ * \param posY Pozycja Y nowego punktu.
+ */
 void Draw::updatePath(Ui::MainWindow *ui, QGraphicsScene *scene, QList<QPointF> &pathPoints, QList<QGraphicsEllipseItem *> &pathItems, float posX, float posY)
 {
     QPointF newPoint(posX, posY);

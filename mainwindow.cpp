@@ -1,3 +1,8 @@
+/**
+ * \file mainwindow.cpp
+ * \brief Implementacja klasy MainWindow.
+ */
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "draw.h"
@@ -10,6 +15,13 @@
 #include <QTranslator>
 #include <QLibraryInfo>
 
+/**
+ * \brief Konstruktor klasy MainWindow.
+ *
+ * Inicjalizuje interfejs użytkownika, obsługę portu szeregowego, widok i tłumacza.
+ *
+ * \param parent Wskaźnik na obiekt nadrzędny.
+ */
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -19,14 +31,14 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    setViewHandler->setIcons(ui);
-    setViewHandler->setTexts(ui, translator, this, false);
-    setViewHandler->initializeLEDIndicator(ui);
-    Draw::initializeGraphicsScene(ui, scene, gridPixmapItem);
+    setViewHandler->setIcons(ui);  ///< Ustawia ikony w interfejsie użytkownika.
+    setViewHandler->setTexts(ui, translator, this, false);  ///< Ustawia teksty w interfejsie użytkownika.
+    setViewHandler->initializeLEDIndicator(ui);  ///< Inicjalizuje wskaźnik LED.
+    Draw::initializeGraphicsScene(ui, scene, gridPixmapItem);  ///< Inicjalizuje scenę graficzną.
 
-    serialPortHandler->populateAvailablePorts(ui);
+    serialPortHandler->populateAvailablePorts(ui);  ///< Wypełnia listę dostępnych portów szeregowych.
 
-    // Connect signals and slots
+    // Połączenie sygnałów i slotów
     connect(ui->buttonConnect, &QPushButton::clicked, this, [this]() {
         serialPortHandler->connectSerialPort(ui->comboBoxSerialPorts->currentText());
     });
@@ -37,7 +49,7 @@ MainWindow::MainWindow(QWidget *parent)
         serialPortHandler->sendTargetCoordinates(ui);
     });
     connect(serialPortHandler, &serialport::serialDataReceived, this, [this](const QList<QByteArray> &data) {
-        serialPortHandler->handleSerialData(ui, scene, pathPoints, pathItems, data);
+        serialPortHandler->handleSerialData(this, ui, scene, pathPoints, pathItems, data);
     });
     connect(serialPortHandler, &serialport::portStatusChanged, this, [this](bool connected, const QString &portName) {
         serialPortHandler->handlePortStatusChanged(ui, connected, portName);
@@ -50,10 +62,15 @@ MainWindow::MainWindow(QWidget *parent)
         Draw::clearPathHistory(scene, pathPoints, pathItems, gridPixmapItem);
     });
 
-    // Attempt to open serial port on start
+    // Próba otwarcia portu szeregowego przy starcie
     serialPortHandler->connectSerialPort(ui->comboBoxSerialPorts->currentText());
 }
 
+/**
+ * \brief Destruktor klasy MainWindow.
+ *
+ * Usuwa interfejs użytkownika.
+ */
 MainWindow::~MainWindow()
 {
     delete ui;
